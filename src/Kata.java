@@ -20,7 +20,7 @@ public class Kata {
         ArrayList<Object> negatives = new ArrayList<>();
         Matcher matcher = pattern.matcher(numbers);
         while (matcher.find()) {
-                int number = Integer.valueOf(numbers.substring(matcher.start(), matcher.end()));
+                int number = Integer.parseInt(numbers.substring(matcher.start(), matcher.end()));
                 if (number < 0) {
                     negatives.add(number);
                 }
@@ -28,7 +28,7 @@ public class Kata {
         }
 
         if (!negatives.isEmpty()) {
-            throw new Exception("Negatives not allowed: " + negatives.toString());
+            throw new Exception("Negatives not allowed: " + negatives);
         }
 
         return sum;

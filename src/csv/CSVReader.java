@@ -5,15 +5,12 @@ import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class CSVReader {
 
-    String[] keys = "Customer Ref\tCustomer Name\tcsv.Address Line 1\tcsv.Address Line 2\tTown\tCounty\tCountry\tPostcode".split("\t");
     Gson gson = new Gson();
     String url = "localhost:8080/addresses";
 
