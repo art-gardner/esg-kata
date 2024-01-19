@@ -1,0 +1,49 @@
+USE master;
+GO
+
+IF NOT EXISTS (
+      SELECT name
+      FROM sys.databases
+      WHERE name = N'esgdb'
+      )
+   CREATE DATABASE [esgdb];
+GO
+
+IF SERVERPROPERTY('ProductVersion') > '12'
+   ALTER DATABASE [esgdb] SET QUERY_STORE = ON;
+GO
+
+
+
+INSERT INTO dbo.Addresses  (
+   [CustomerRef],
+   [CustomerName],
+   [AddressLineOne],
+   [AddressLineTwo],
+   [Town],
+   [County],
+   [Country],
+   [Postcode]
+)
+VALUES
+   (1, N'Orlando', N'Australia', N''),
+GO
+
+
+
+IF OBJECT_ID('dbo.Addresses', 'U') IS NOT NULL
+   DROP TABLE dbo.Addresses;
+GO
+
+-- Create the table in the specified schema
+CREATE TABLE dbo.Addresses (
+   CustomerRef INT NOT NULL PRIMARY KEY, -- primary key column
+   [CustomerName] NVARCHAR(50) NOT NULL,
+   [AddressLineOne] NVARCHAR(50) NOT NULL,
+   [AddressLineTwo] NVARCHAR(50) NOT NULL,
+   [Town] NVARCHAR(50) NOT NULL,
+   [County] NVARCHAR(50) NOT NULL,
+   [Country] NVARCHAR(50) NOT NULL,
+   [Postcode] NVARCHAR(50) NOT NULL
+   );
+GO

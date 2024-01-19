@@ -1,0 +1,2 @@
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=reallyStrongPassword!1" -e "MSSQL_PID=Evaluation" -p 1433:1433  --name esgdb --hostname esgdb -d mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+Server=mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04\esgdb;Database=myDataBase;User Id=esgdb;Password=12345;
