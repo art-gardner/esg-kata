@@ -7,15 +7,32 @@ import java.util.regex.Pattern;
 public class Kata {
 
     static Pattern pattern = Pattern.compile("-?\\d+");
+    static Pattern findDelimiter = Pattern.compile(""(?<=This is)(.*)(?=sentence));
     public static void main(String[] args) throws Exception {
-        System.out.println(Add("1,2,345"));
-        System.out.println(Add("1\\n2,3"));
-        System.out.println("//[|||]\\n1|||2|||3");
-        System.out.println("//[|][%]\\n1|2%3");
-        System.out.println(Add("1,-2,-3,sadsafds-45"));
+        //1
+        //System.out.println(Add(""));
+        //System.out.println(Add("1"));
+        //System.out.println(Add("1,2"));
+        //2	
+	//System.out.println(Add("1,2,345"));
+	//System.out.println(Add("5,3,7,4,6,5453,342"));
+	//System.out.println(Add("7,6,3,4"));
+	//3
+        //System.out.println(Add("1\\n2,3"));
+	//4
+        System.out.println(Add("//;\n1;2"));
+        //System.out.println(Add("//[|][%]\\n1|2%3"));
+        //System.out.println(Add("1,-2,-3,sadsafds-45"));
     }
 
     public static int Add(String numbers) throws Exception{
+	    String split = numbers.split("\n");
+	    String delimiters = split[0].substring(1);
+	    String rawNumbers = split[1];
+
+	    delimiter 
+
+
         int sum = 0;
         ArrayList<Object> negatives = new ArrayList<>();
         Matcher matcher = pattern.matcher(numbers);
